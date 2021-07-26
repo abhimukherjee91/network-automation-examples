@@ -1,0 +1,16 @@
+Value Filldown VS_NAME (\S+)
+Value Filldown VS_IP (\d+\.\d+\.\d+\.\d+)
+Value Filldown VS_PORT (\S+)
+Value Filldown POOL_NAME (\S+)
+Value POOL_MEMBER_NAME (\S+)
+Value POOL_MEMBER_PORT (\S+)
+
+Start
+  ^.*Ltm::Virtual Server:\s+${VS_NAME}
+  ^.*Destination\s+:\s+${VS_IP}:${VS_PORT}
+  ^.*Ltm::Pool:\s+${POOL_NAME}
+  ^.*Ltm::Pool Member:\s+${POOL_MEMBER_NAME}:${POOL_MEMBER_PORT} -> Record
+  
+
+
+EOF

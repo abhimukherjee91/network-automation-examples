@@ -8,7 +8,7 @@ with open ("networks.csv",'r') as f:
         list.append(line.strip())
 del list[0]
 with open ("networks_output.csv",'w') as f:
-    f.write("Subnet" + "\n")
+    f.write("Input_IP,Subnet" + "\n")
     f.close()
 for line in list:
     subnet = ipcalc.Network(line)
